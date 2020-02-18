@@ -1,0 +1,2 @@
+# SmartMenu
+Django + Angular WebApp
