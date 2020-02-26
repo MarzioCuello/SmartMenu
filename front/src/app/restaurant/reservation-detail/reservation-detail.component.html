@@ -1,0 +1,33 @@
+<div class="d-flex">
+    <app-icon icon="angle-left" class="p-1 mr-2 pointer" size="big" [routerLink]="'/restaurant'"></app-icon>
+    <h1> Detalle de la reserva</h1>
+</div>
+
+
+<div class="d-flex flex-wrap bg-light justify-content-between" *ngIf="reservation">
+    <div class="d-flex">
+        <img src="{{reservation.host.imageUrl()}}" alt="{{reservation.host.fullName()}}" width="170px" height="170px">
+        <div class="p-3">
+            <h5> {{reservation.host.fullName()}} </h5>
+            
+            <div *ngFor="let o of reservation.orders; let i = index" class="p-2">
+                <p class="m-0"> <strong>Orden {{i}} </strong> </p>
+                <p class="m-0" *ngFor="let p of o.plates"> {{p.name}} </p>
+            </div>
+
+
+            <button class="btn btn-danger rounded-0 px-3 py-2 font-weight-bold" *ngIf="reservation.status == 'pendiente'"> comenzar a preparar </button> 
+            <button class="btn btn-danger rounded-0 px-3 py-2 font-weight-bold" *ngIf="reservation.status == 'en proceso'"> finalizar </button> 
+
+        </div>
+    </div>
+    <div class="py-2 px-4 bg-primary text-white text-center d-flex flex-column">
+        <span>llega a las</span>
+        <h3> {{reservation.time}} </h3>
+
+        <span>mesa para</span>
+        <h3>{{reservation.orders.length}} </h3>
+
+        <span>estado: <strong>{{reservation.status}}</strong> </span>
+    </div>
+</div>

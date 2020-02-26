@@ -10,11 +10,18 @@ export class User {
         Object.assign(this, input);
         return this;
     }
+
+
+    constructor(input: any) {
+        Object.assign(this, input);
+        return this;
+    }
     
     fullName() {
         return this.name + ' ' + this.last_name;
     }
     imageUrl() {
-        return environment.filesUrl + '/profiles/' + this.image;
+        return this.image;
+        // return environment.filesUrl + '/profiles/' + this.image;
     }
 }
