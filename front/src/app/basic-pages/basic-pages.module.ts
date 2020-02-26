@@ -5,6 +5,7 @@ import { BasicPagesRoutingModule } from './basic-pages-routing.module';
 import { HomeComponent } from './home/home.component';
 import { FaqComponent } from './faq/faq.component';
 import { SharedModule } from '../shared/shared.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    BasicPagesRoutingModule
+    BasicPagesRoutingModule,
+    NgbModule
   ]
 })
 export class BasicPagesModule { }

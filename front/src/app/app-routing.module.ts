@@ -10,6 +10,7 @@ const routes: Routes = [
 
   { path: '', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) },
+  { path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule) },
 
 
 
