@@ -27,6 +27,10 @@ export class ToastrService {
       this.toastr.info(text, title);
     }
 
+
+
+
+
     modal(title, text, okText:string = 'Aceptar', declineText:string = 'Cancelar') {
       if (!document.getElementsByTagName("jaspero-confirmations")[0].classList.contains('hide-modal-cancel') && declineText == '')
         document.getElementsByTagName("jaspero-confirmations")[0].className += ' hide-modal-cancel';

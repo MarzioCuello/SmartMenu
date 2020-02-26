@@ -1,0 +1,16 @@
+<div class="col-12" *ngFor="let p of menu.pages">
+    <div class="text-white font-weight-bold bg-dark p-2 w-100 my-2">{{p.name}}</div>
+
+    <div class="pl-3 py-2" *ngFor="let c of p.categories">
+        <strong>{{c.name}}</strong>
+        <div class="pl-2 py-2 d-flex justify-content-between" *ngFor="let plate of c.plates" (click)="addPlate(plate)">
+            <div>{{plate.name}}</div>
+            <div>${{plate.price}}</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="view-order-button text-center w-100 text-center text-white font-weight-bold bg-dark p-2" [routerLink]="'/mi-pedido'">
+    Ver mi pedido
+</div>

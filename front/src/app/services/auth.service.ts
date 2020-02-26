@@ -62,7 +62,7 @@ export class AuthService {
 
 
     this.url = this.apiService.getUrl() + '/auth';
-    this.user = new User().deserialize(this.localStorage.getItem('user'));
+    this.user = new User(this.localStorage.getItem('user'));
     
 
     if(this.user) {
