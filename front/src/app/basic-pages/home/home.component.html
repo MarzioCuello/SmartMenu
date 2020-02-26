@@ -1,5 +1,5 @@
 <div class="row justify-content-center h-100">
-    <div class="d-flex w-100 flex-column justify-content-around text-center">
+    <div class="d-flex w-100 flex-column justify-content-around align-items-center text-center">
         <div class="presentation">
             <img src="../../../assets/img/logo.png" alt="logo">
             <div class="title text-secondary"><h1>SmartMenú</h1></div>
@@ -8,35 +8,55 @@
             <h2>La manera más inteligente <br>de salir a comer</h2>
         </div>
         <div class="metodology">
-            <ngb-carousel *ngIf="images">
+            <img src="./assets/tienda-online.svg" alt="">
+            <ngb-carousel class="col-12 text-center" *ngIf="images">
                 <ng-template ngbSlide>
-                  <div class="picsum-img-wrapper">
+                  <div class="d-flex image-carousel col-12 justify-content-center align-items-center">
                     <img [src]="images[0]" alt="Random first slide">
                   </div>
-                  <div class="carousel-caption">
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  <div class="primary">
+                    <h3>Elije tu restaurantes</h3>
+                    <p>Tendrás varias formas de seleccionar el restaurante ideal</p>
                   </div>
                 </ng-template>
                 <ng-template ngbSlide>
-                  <div class="picsum-img-wrapper">
+                  <div class="d-flex image-carousel col-12 justify-content-center align-items-center">
                     <img [src]="images[1]" alt="Random second slide">
                   </div>
-                  <div class="carousel-caption">
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <div class="">
+                    <h3>Elije fecha y hora</h3>
+                    <p>Puedes seleccionar la fecha y hora exácta en la que quieres ir a comer</p>
                   </div>
                 </ng-template>
                 <ng-template ngbSlide>
-                  <div class="picsum-img-wrapper">
+                  <div class="d-flex image-carousel col-12 justify-content-center align-items-center">
                     <img [src]="images[2]" alt="Random third slide">
                   </div>
-                  <div class="carousel-caption">
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  <div class="">
+                    <h3>Comparte tu mesa</h3>
+                    <p>Elije entre tus contactos con quiénes quieras compartir y envíales una invitación </p>
                   </div>
                 </ng-template>
+                <ng-template ngbSlide>
+                    <div class="d-flex image-carousel col-12 justify-content-center align-items-center">
+                      <img [src]="images[3]" width="50%" alt="Random third slide">
+                    </div>
+                    <div class="">
+                      <h3>Selecciona tu pedido</h3>
+                      <p>Selecciona desde tu celular las comidas que quieras consumir</p>
+                    </div>
+                  </ng-template>
+                  <ng-template ngbSlide>
+                    <div class="d-flex image-carousel col-12 justify-content-center align-items-center text-center">
+                      <img [src]="images[4]" width="50%" alt="Random third slide">
+                    </div>
+                    <div class="">
+                      <h3>Dirigete al restaurante</h3>
+                      <p>A la hora indicada, llega al restaurante para disfrutar de una rica comida.</p>
+                    </div>
+                  </ng-template>
               </ngb-carousel>
         </div>
+        <div class="btn btn-primary w-75" [routerLink]="'/client'">Ingresar</div>
     </div>
 </div>

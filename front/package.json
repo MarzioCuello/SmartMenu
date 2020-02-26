@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.14",
     "@jaspero/ng-confirmations": "^0.4.7",
     "@ng-bootstrap/ng-bootstrap": "^6.0.0",
+    "@types/googlemaps": "^3.39.3",
     "bootstrap": "^4.4.1",
     "ng-inline-svg": "^9.2.2",
     "ngx-page-scroll-core": "^7.0.0",
