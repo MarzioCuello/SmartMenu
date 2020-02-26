@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  images = ["./assets/tienda-online.svg", "1011", "984"];
+  images = ["./assets/img/tienda-online.svg","./assets/img/calendario.svg","./assets/img/red.svg","./assets/img/menu.svg", "./assets/img/reloj-de-arena.svg"];
 
   constructor() { }
 

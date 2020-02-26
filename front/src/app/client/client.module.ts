@@ -6,12 +6,18 @@ import { ClientComponent } from './client.component';
 import { MenuComponent } from './menu/menu.component';
 import { MyOrderComponent } from './my-order/my-order.component';
 
+import { SelectRestaurantComponent } from './select-restaurant/select-restaurant.component';
+import { FavoritesRestaurantsComponent } from './favorites-restaurants/favorites-restaurants.component';
+
 
 @NgModule({
-  declarations: [ClientComponent, MenuComponent, MyOrderComponent],
+  declarations: [ClientComponent, SelectRestaurantComponent, FavoritesRestaurantsComponent, MenuComponent, MyOrderComponent],
   imports: [
     CommonModule,
     ClientRoutingModule
+  ],
+  exports: [
+    SelectRestaurantComponent
   ]
 })
 export class ClientModule { }
