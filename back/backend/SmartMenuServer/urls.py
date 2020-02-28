@@ -6,8 +6,8 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^restaurante$', views.RestaurantList.as_view()),
-    url(r'^restaurante/(?P<pk>[0-9]+)$', views.RestaurantDetail.as_view()),
+    url(r'^restaurant$', views.RestaurantList.as_view()),
+    url(r'^restaurant/(?P<pk>[0-9]+)$', views.RestaurantDetail.as_view()),
     url(r'^menu$', views.MenuList.as_view()),
     url(r'^menu/(?P<pk>[0-9]+)$', views.MenuDetail.as_view()),
     url(r'^plate$', views.PlateList.as_view()),
