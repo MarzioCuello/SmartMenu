@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservationService } from 'src/app/services/reservation.service';
 import { Reservation } from 'src/app/models/reservation';
+import { ToastrService } from 'src/app/services/toastr.service';
 
 @Component({
   selector: 'app-reservation-detail',
@@ -14,13 +15,20 @@ export class ReservationDetailComponent implements OnInit {
 
 
   constructor(
-    public reservationService: ReservationService
+    public reservationService: ReservationService,
+    private toast: ToastrService
   ) {
     this.reservation = this.reservationService.getReservation();
-    console.log(this.reservation);
   }
 
   ngOnInit() {
   }
+
+  start() {
+    this.toast.modal('Comenzar', 'Confirmar comenzar a preparar', 'Comenzar', 'Cancelar').subscribe(res => {
+      console.log(res);
+    })
+  }
+  
 
 }
