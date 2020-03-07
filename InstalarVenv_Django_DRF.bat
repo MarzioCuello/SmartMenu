@@ -1,0 +1,1 @@
+cmd /k "python -m venv venv & cd /d venv\Scripts & activate & cd /d ..\.. & pip install --upgrade pip & pip install -r requirements.txt & cd /d back\backend & python manage.py makemigrations & python manage.py migrate & cd ..\.. cd /d venv\Scripts & deactivate "

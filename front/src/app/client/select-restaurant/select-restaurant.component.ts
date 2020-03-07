@@ -6,7 +6,7 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef} from '@angular
   styleUrls: ['./select-restaurant.component.scss']
 })
 export class SelectRestaurantComponent implements OnInit {
-  data = [
+  restaurants = [
     {
       name: "Fulano",
       cords: {
@@ -56,8 +56,8 @@ export class SelectRestaurantComponent implements OnInit {
       disableDefaultUI: true,
       mapTypeId: 'terrain'
     });
-    for (let trainer of this.data) {
-      this.marker = new google.maps.Marker({position: trainer.cords, map: this.map});
+    for (let restaurant of this.restaurants) {
+      this.marker = new google.maps.Marker({position: restaurant.cords, map: this.map});
       this.marker.setIcon('https://image.flaticon.com/icons/png/32/8/8753.png');
       google.maps.event.addListener(this.marker, 'click', function() {
         this.infowindow = new google.maps.InfoWindow({
