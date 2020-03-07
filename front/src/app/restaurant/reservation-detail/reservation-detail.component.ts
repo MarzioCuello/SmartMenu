@@ -22,5 +22,6 @@ export class ReservationDetailComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }
