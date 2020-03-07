@@ -20,6 +20,8 @@ import { ApiService } from './services/api.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { MiscService } from './services/misc.service';
 import { HttpService } from './services/http.service';
+import { ConfirmationModalComponent } from './shared/confirmation-modal/confirmation-modal.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { HttpService } from './services/http.service';
     JasperoConfirmationsModule,
     NgxPageScrollCoreModule.forRoot({duration: 400, scrollOffset:100}),
     FormsModule,
+    NgbModule
   ],
   providers: [
     ConfirmationService,
@@ -50,6 +53,7 @@ import { HttpService } from './services/http.service';
     MiscService,
     HttpService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmationModalComponent]
 })
 export class AppModule { }
