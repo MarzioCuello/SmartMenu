@@ -1,46 +1,25 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 53 53" style="enable-background:new 0 0 53 53;" xml:space="preserve">
-<rect x="27" y="28" style="fill:#424A60;" width="2" height="18"/>
-<rect x="37.5" y="2.893" transform="matrix(0.7071 0.7071 -0.7071 0.7071 20.8223 -23.2696)" style="fill:#424A60;" width="2" height="21.213"/>
-<rect x="15" y="21.858" transform="matrix(0.7071 0.7071 -0.7071 0.7071 30.1421 -0.7696)" style="fill:#424A60;" width="2" height="28.284"/>
-<rect x="10.722" y="13.5" transform="matrix(0.7071 0.7071 -0.7071 0.7071 15.6716 -8.8345)" style="fill:#424A60;" width="15.556" height="2"/>
-<rect x="26.893" y="32.5" transform="matrix(0.7071 0.7071 -0.7071 0.7071 34.6716 -16.7046)" style="fill:#424A60;" width="21.213" height="2"/>
-<circle style="fill:#43B05C;" cx="48" cy="5" r="5"/>
-<circle style="fill:#7383BF;" cx="28" cy="48" r="5"/>
-<circle style="fill:#57D8AB;" cx="5" cy="46" r="5"/>
-<circle style="fill:#D75A4A;" cx="12" cy="8" r="3"/>
-<circle style="fill:#EBBA16;" cx="44" cy="40" r="3"/>
-<circle style="fill:#4B6DAA;" cx="28" cy="24" r="7"/>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#424A60;}
+	.st1{fill:#43B05C;}
+	.st2{fill:#7383BF;}
+	.st3{fill:#57D8AB;}
+	.st4{fill:#D75A4A;}
+	.st5{fill:#EBBA16;}
+	.st6{fill:#4B6DAA;}
+</style>
+<rect x="260.8" y="270.5" class="st0" width="19.3" height="173.9"/>
+<rect x="269.5" y="120.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 16.7224 301.187)" class="st0" width="204.9" height="19.3"/>
+<rect x="18" y="338.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -200.6387 211.1548)" class="st0" width="273.2" height="19.3"/>
+<rect x="169.1" y="64.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -46.702 167.3986)" class="st0" width="19.3" height="150.3"/>
+<rect x="352.6" y="221.2" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -122.7262 350.9415)" class="st0" width="19.3" height="204.9"/>
+<circle class="st1" cx="463.7" cy="48.3" r="48.3"/>
+<circle class="st2" cx="270.5" cy="463.7" r="48.3"/>
+<circle class="st3" cx="48.3" cy="444.4" r="48.3"/>
+<circle class="st4" cx="115.9" cy="77.3" r="29"/>
+<circle class="st5" cx="425.1" cy="386.4" r="29"/>
+<circle class="st6" cx="270.5" cy="231.8" r="67.6"/>
 </svg>

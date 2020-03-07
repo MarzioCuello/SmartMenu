@@ -12,4 +12,8 @@ export class ReservationComponent implements OnInit {
   ngOnInit() {
   }
 
+  generateReservation(){
+    console.log("Reserva generada")
+  }
+
 }
