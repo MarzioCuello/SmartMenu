@@ -1,15 +1,15 @@
-<div class="col-12" *ngFor="let r of restaurants">
-    <div class="text-white font-weight-bold bg-dark p-2 w-100 my-2">{{r.name}}</div>
-
-    <div class="pl-3 py-2">
-        <strong>{{r.type}}</strong>
-        <div class="pl-2 py-2 d-flex justify-content-between"  (click)="addPlate(plate)">
-            <div>{{r.address}}</div>
+<div class="container d-flex flex-wrap m-5">
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let r of restaurants">
+        <div class="text-white font-weight-bold bg-dark p-2 w-100">{{r.name}}</div>
+        <div class="pl-3">
+            <strong>{{r.type}}</strong>
+            <div class="pl-2 d-flex justify-content-between" (click)="addPlate(plate)">
+                <div>{{r.address}}</div>
+            </div>
+            <div class="btn btn-primary"
+                [routerLink]="'/menu'">
+                Seleccionar {{r.name}}
+            </div>
         </div>
     </div>
-</div>
-
-
-<div class="view-order-button text-center w-100 text-center text-white font-weight-bold bg-dark p-2" [routerLink]="'/mi-pedido'">
-    Ver mi pedido
 </div>

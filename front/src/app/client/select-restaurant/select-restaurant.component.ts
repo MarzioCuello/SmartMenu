@@ -1,4 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
+import { ToastrService } from '../../services/toastr.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-select-restaurant',
@@ -43,7 +45,10 @@ export class SelectRestaurantComponent implements OnInit {
 
   @ViewChild('mapContainer', {static: false}) gmap: ElementRef;
 
-  constructor() { }
+  constructor(
+    private toast: ToastrService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.initMap();
@@ -59,11 +64,18 @@ export class SelectRestaurantComponent implements OnInit {
     for (let restaurant of this.restaurants) {
       this.marker = new google.maps.Marker({position: restaurant.cords, map: this.map});
       this.marker.setIcon('https://image.flaticon.com/icons/png/32/8/8753.png');
+      let that = this;
       google.maps.event.addListener(this.marker, 'click', function() {
-        this.infowindow = new google.maps.InfoWindow({
-          content: "<strong>Información de un marker</strong>"
-        });
-        this.infowindow.open(this.map, this.marker);
+        that.toast.modal(
+          restaurant.name,
+          restaurant.times,
+          "Seleccionar",
+          "Cancelar"
+        ).subscribe(res => {
+          if (res) {
+            that.router.navigateByUrl("client/menu")
+          }
+        })
       });
     }
   }

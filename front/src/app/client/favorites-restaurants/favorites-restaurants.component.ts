@@ -18,6 +18,16 @@ export class FavoritesRestaurantsComponent implements OnInit {
       logo: "elfogon.png",
     },
     {
+      name: "El Fogón",
+      type: "Parrilla",
+      address: "San José 1080",
+      open: {
+        days: "De lunes a domingos",
+        hours: "De 10 a 24"
+      },
+      logo: "elfogon.png",
+    },
+    {
       name: "Santo Pecado",
       type: "Parrilla",
       address: "Bvr. Artigas 4304",

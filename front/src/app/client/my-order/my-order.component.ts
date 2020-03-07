@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from '../../services/toastr.service';
 import { OrderService } from '../../services/order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-order',
@@ -11,7 +12,8 @@ export class MyOrderComponent implements OnInit {
   plates: any;
   constructor(
     private toast: ToastrService,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private router:Router
   ) {
     this.plates = this.orderService.getOrder();
   }
@@ -26,6 +28,15 @@ export class MyOrderComponent implements OnInit {
         this.toast.success('Correcto', 'Eliminado de tu pedido');
       }
     });
+  }
+
+  pay() {
+    this.toast.modal('Pago', 'El pago se ha realizado con éxito', 'Continar', false ).subscribe(res => {
+      let that = this;
+      if (res) {
+        that.router.navigateByUrl("client/reserva")
+      }
+    })
   }
 
 }
