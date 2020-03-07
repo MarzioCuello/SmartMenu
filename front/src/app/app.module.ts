@@ -21,7 +21,10 @@ import { LocalStorageService } from './services/local-storage.service';
 import { MiscService } from './services/misc.service';
 import { HttpService } from './services/http.service';
 import { ConfirmationModalComponent } from './shared/confirmation-modal/confirmation-modal.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { BsLocaleService } from 'ngx-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -52,8 +55,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     LocalStorageService,
     MiscService,
     HttpService,
+    BsLocaleService
   ],
   bootstrap: [AppComponent],
   entryComponents: [ConfirmationModalComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+
+
+  }
+}

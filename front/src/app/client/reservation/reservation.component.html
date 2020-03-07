@@ -9,7 +9,12 @@
     </div>
     <div class="col-6">
         <div class="text-white font-weight-bold bg-dark p-2 text-right">
-            01 / 02 / 20
+            <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" type="button"> <app-icon icon="calendar"></app-icon> </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
