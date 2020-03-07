@@ -1,6 +1,6 @@
-venv/Scripts/activate
-cd back\backend
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-venv/Scripts/deactivate
+source venv/bin/activate
+cd back/backend
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver
+deactivate

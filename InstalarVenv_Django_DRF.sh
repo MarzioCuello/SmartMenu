@@ -1,7 +1,7 @@
-python -m venv && venv/Scripts/activate
-pip install --upgrade pip
-pipinstall -r requirements.txt
+python3 -m venv venv && source venv/bin/activate
+pip3 install --upgrade pip
+pip3 install -r requirements.txt
 cd back/backend
-python manage.py makemigrations
-python manage.py migrate
-venv/Scripts/deactivate
+python3 manage.py makemigrations
+python3 manage.py migrate
+
