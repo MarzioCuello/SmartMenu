@@ -12,20 +12,21 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { ErrorDisplayComponent } from './error-display/error-display.component';
 import { LoadingDirective } from './loading.directive';
-
+import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 
 @NgModule({
-  declarations: [NavbarComponent, IconComponent, MenuComponent, FooterComponent, ErrorDisplayComponent, LoadingDirective],
+  declarations: [NavbarComponent, IconComponent, MenuComponent, FooterComponent, ErrorDisplayComponent, LoadingDirective, ConfirmationModalComponent],
   imports: [
     CommonModule,
     InlineSVGModule.forRoot(),
     RouterModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   exports: [
     NavbarComponent, IconComponent, MenuComponent, FooterComponent, ErrorDisplayComponent,LoadingDirective
   ],
   providers: [
   ],
+  entryComponents: [ ConfirmationModalComponent]
 })
 export class SharedModule { }

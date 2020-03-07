@@ -16,7 +16,7 @@
             </div>
 
 
-            <button class="btn btn-danger rounded-0 px-3 py-2 font-weight-bold" *ngIf="reservation.status == 'pendiente'"> comenzar a preparar </button> 
+            <button class="btn btn-danger rounded-0 px-3 py-2 font-weight-bold" *ngIf="reservation.status == 'pendiente'" (click)="start()"> comenzar a preparar </button> 
             <button class="btn btn-danger rounded-0 px-3 py-2 font-weight-bold" *ngIf="reservation.status == 'en proceso'"> finalizar </button> 
 
         </div>
