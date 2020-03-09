@@ -1,11 +1,14 @@
 <div class="col-12">
-    <div class="py-2 d-flex justify-content-between" *ngFor="let plate of plates" (click)="addPlate(plate)">
+    <div class="py-2 d-flex justify-content-between" *ngFor="let plate of plates; let i = index" (click)="removePlate(plate,i,plate.price)">
         <div>{{plate.name}}</div>
         <div>${{plate.price}}</div>
     </div>
 </div>
+<div class="w-100 text-right text-white font-weight-bold bg-dark p-2">Total: {{total}}</div>
+
+
     
-<div class="fixed-botton-button text-center w-100 text-center text-white font-weight-bold bg-dark p-2" (click)="pay()">
+<div class="fixed-botton-button w-100 text-center text-white font-weight-bold bg-primary p-2 pointer" (click)="pay()">
     Pagar pedido
 </div>
 

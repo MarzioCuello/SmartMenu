@@ -1,6 +1,9 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
 import { ToastrService } from '../../services/toastr.service';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { HttpService } from 'src/app/services/http.service';
+import { CallBackService } from 'src/app/services/call-back.service';
 
 @Component({
   selector: 'app-select-restaurant',
@@ -47,7 +50,8 @@ export class SelectRestaurantComponent implements OnInit {
 
   constructor(
     private toast: ToastrService,
-    private router: Router
+    private router: Router,
+    private loadRestaurant: CallBackService
   ) { }
 
   ngOnInit() {
@@ -61,9 +65,26 @@ export class SelectRestaurantComponent implements OnInit {
       disableDefaultUI: true,
       mapTypeId: 'terrain'
     });
-    for (let restaurant of this.restaurants) {
+    this.loadRestaurant.loadRestaurants().subscribe((res:any) => {
+      for (let restaurant of res) {
+        let coords = {lat: Number(restaurant.latitude), lng: Number(restaurant.longitude)};
+        this.marker = new google.maps.Marker({position: coords, map: this.map});
+        this.marker.setIcon('/assets/img/logo-s.png');
+        let that = this;
+        google.maps.event.addListener(this.marker, 'click', function() {
+          that.toast.modal(restaurant.name,restaurant.latitude,"Seleccionar","Cancelar").subscribe(res => {
+            if (res) {
+              that.router.navigateByUrl("client/menu")
+            }
+          })
+        })
+      }
+    })
+    
+    
+    /*for (let restaurant of this.restaurants) {
       this.marker = new google.maps.Marker({position: restaurant.cords, map: this.map});
-      this.marker.setIcon('https://image.flaticon.com/icons/png/32/8/8753.png');
+      this.marker.setIcon('/assets/img/logo-s.png');
       let that = this;
       google.maps.event.addListener(this.marker, 'click', function() {
         that.toast.modal(
@@ -77,7 +98,7 @@ export class SelectRestaurantComponent implements OnInit {
           }
         })
       });
-    }
+    }*/
   }
 
 }

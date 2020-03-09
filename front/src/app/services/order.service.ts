@@ -12,6 +12,10 @@ export class OrderService {
   addToOrder(plate) {
     this.order.push(plate);
   }
+  removeToOrder(plate){
+    console.log(plate);
+    this.order.splice(plate,1);
+  }
   getOrder() {
     return this.order;
   }

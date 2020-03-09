@@ -12,6 +12,8 @@ export class ConfirmationModalComponent implements OnInit {
   @Input() public okText;
   @Input() public declineText;
   @Input() public subject;
+  @Input() public photo;
+
 
   constructor() { }
 

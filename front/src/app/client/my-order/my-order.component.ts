@@ -10,21 +10,35 @@ import { Router } from '@angular/router';
 })
 export class MyOrderComponent implements OnInit {
   plates: any;
+  total: number = 0;
   constructor(
     private toast: ToastrService,
     private orderService: OrderService,
     private router:Router
   ) {
     this.plates = this.orderService.getOrder();
+    this.sumaTotal();
   }
 
   ngOnInit() {
+    
   }
 
-  removePlate(p) {
+  sumaTotal() {
+    for (let suma of this.plates) {
+      this.total += Number(suma.price);
+  }
+
+
+  }
+
+  removePlate(p,i,price) {
     this.toast.modal('¿Borrar de tu pedido?', 'Borrar ' + p.name + ' de tu pedido por $' + p.price, 'Borrar', 'Cancelar').subscribe(res => {
       if (res) {
-        this.orderService.addToOrder(p);
+        console.log('el plato es: ' + p)
+        console.log('el id es: '+ i)
+        this.orderService.removeToOrder(i);
+        this.total -= price
         this.toast.success('Correcto', 'Eliminado de tu pedido');
       }
     });

@@ -11,7 +11,7 @@ export class HttpService {
   constructor(
     private http: HttpClient,
     private localStorage: LocalStorageService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
   ) {}
 
   buildHeaders (h) : any {
@@ -91,4 +91,5 @@ export class HttpService {
         }
       });
   }
+
 }

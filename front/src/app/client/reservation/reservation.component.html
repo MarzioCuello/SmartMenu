@@ -12,7 +12,7 @@
             <div class="input-group">
                 <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" type="button"> <app-icon icon="calendar"></app-icon> </button>
+                    <button class="btn btn-outline-secondary calendar" type="button" (click)="d.toggle()"> <app-icon icon="layout-top-panel-5"></app-icon> </button>
                 </div>
             </div>
         </div>
@@ -26,7 +26,12 @@
     </div>
     <div class="col-6">
         <div class="text-white font-weight-bold bg-dark p-2 text-right">
-            10 : 00
+            <div class="input-group">
+                <input class="form-control" placeholder="hh : mm" name="hora">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" type="button" (click)="d.toggle()"> <app-icon icon="cake"></app-icon> </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -42,6 +47,6 @@
         </div>
     </div>
 </div>
-<div class="fixed-botton-button w-100 text-center text-white font-weight-bold bg-dark p-2 pointer" (click)="generateReservation()">
+<div class="fixed-botton-button w-100 text-center text-white font-weight-bold bg-primary p-2 pointer" (click)="generateReservation()">
     Generar reserva
 </div>
