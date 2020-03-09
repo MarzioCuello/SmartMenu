@@ -20,13 +20,14 @@ class Restaurant(models.Model):
 
 class Menu(models.Model):
     name = models.CharField(max_length=120)
-    restaurant_id = models.ForeignKey(Restaurant, null=True, on_delete=models.SET_NULL)
+    restaurant_id = models.ForeignKey(Restaurant, related_name='menues', null=True, on_delete=models.SET_NULL)
     plates = []  # aca van los plates
 
 
 class Plate(models.Model):
     name = models.CharField(max_length=120)
-    menu_id = models.ForeignKey(Menu, null=True, on_delete=models.SET_NULL)
+    price = models.IntegerField(default=0)
+    menu_id = models.ForeignKey(Menu, null=True, related_name='plates', on_delete=models.SET_NULL)
 
 
 class User(models.Model):
@@ -39,17 +40,17 @@ class User(models.Model):
 class Reservation(models.Model):
     time = models.CharField(max_length=120)
     status = models.CharField(max_length=120, choices=STATUS_ENUM, default='0')
-    restaurant_id = models.ForeignKey(Restaurant, null=True, on_delete=models.SET_NULL)
-    host_id = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    restaurant_id = models.ForeignKey(Restaurant, related_name='reservations', null=True, on_delete=models.SET_NULL)
+    host_id = models.ForeignKey(User, null=True, related_name='reservations', on_delete=models.SET_NULL)
     orders = []
 
 
 class Order(models.Model):
-    reservation_id = models.ForeignKey(Reservation, null=True, on_delete=models.SET_NULL)
+    reservation_id = models.ForeignKey(Reservation, related_name='orders', null=True, on_delete=models.SET_NULL)
     user_id = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     items = []
 
 
 class OrderItem(models.Model):
-    order_id = models.ForeignKey(Order, null=True, on_delete=models.SET_NULL)
+    order_id = models.ForeignKey(Order, related_name='items',null=True, on_delete=models.SET_NULL)
     plate_id = models.ForeignKey(Plate, null=True, on_delete=models.SET_NULL)
