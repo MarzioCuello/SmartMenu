@@ -19,8 +19,9 @@ Django + Angular WebApp
 * Abrir un CMD 
 * Ejecutar el script Iniciar_RefrescarServerDjango.bat
 * Para detener el server, CTRL+C (hasta que se detenga)
-
-**Probar en localhost:8000 si hay un mensaje lindo**
+* Fijarse que la consola del CMD se haya detenido en la carpeta back/backend
+* Desde back/backend, teclear python manage.py createsuperuser
+* user = admin, mail = admin@admin.com, pass = admin, confirmar contraseña, yes
 
 **Luego probar localhost:8000/admin con:**
 
