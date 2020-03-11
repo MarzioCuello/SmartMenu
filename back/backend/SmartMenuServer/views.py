@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
-from SmartMenuServer.models import Restaurant, Menu, Plate, User, Reservation, Order, OrderItem
-from SmartMenuServer.serializers import RestaurantSerializer, MenuSerializer, PlateSerializer, UserSerializer, ReservationSerializer, OrderSerializer, OrderItemSerializer
+from SmartMenuServer.models import Restaurant, Menu, Plate, User, Reservation, Order, OrderItem, Page, Category
+from SmartMenuServer.serializers import RestaurantSerializer, MenuSerializer, PlateSerializer, UserSerializer, ReservationSerializer, OrderSerializer, OrderItemSerializer, PageSerializer, CategorySerializer
 from django.db.models import Q
 from rest_framework.filters import SearchFilter, OrderingFilter
 
@@ -14,10 +14,10 @@ class RestaurantList(generics.ListCreateAPIView):
     filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ['name']
 
+
 class RestaurantDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
-
 
 
 class MenuList(generics.ListCreateAPIView):
@@ -78,3 +78,23 @@ class OrderItemList(generics.ListCreateAPIView):
 class OrderItemDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer
+
+
+class PageList(generics.ListCreateAPIView):
+    queryset = Page.objects.all()
+    serializer_class = PageSerializer
+
+
+class PageDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Page.objects.all()
+    serializer_class = PageSerializer
+
+
+class CategoryList(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+
+class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer

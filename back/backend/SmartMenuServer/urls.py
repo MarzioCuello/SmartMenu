@@ -19,5 +19,9 @@ urlpatterns = [
     url(r'^order$', views.OrderList.as_view()),
     url(r'^order/(?P<pk>[0-9]+)$', views.OrderDetail.as_view()),
     url(r'^orderitem$', views.OrderItemList.as_view()),
-    url(r'^orderitem/(?P<pk>[0-9]+)$', views.OrderItemDetail.as_view())
+    url(r'^orderitem/(?P<pk>[0-9]+)$', views.OrderItemDetail.as_view()),
+    url(r'^Page$', views.PageList.as_view()),
+    url(r'^Page/(?P<pk>[0-9]+)$', views.PageDetail.as_view()),
+    url(r'^Category$', views.CategoryList.as_view()),
+    url(r'^Category/(?P<pk>[0-9]+)$', views.CategoryDetail.as_view())
 ]

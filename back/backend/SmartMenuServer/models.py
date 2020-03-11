@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
 
 STATUS_ENUM = {
@@ -27,13 +27,31 @@ class Menu(models.Model):
         return "Menu " + str(self.pk) + ": " + str(self.name) + " in " + str(self.restaurant_id)
 
 
+class Page(models.Model):
+    name = models.CharField(max_length=120)
+    menu_id = models.ForeignKey(Menu, null=True, related_name='pages', on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return "Page " + str(self.pk) + ": " + str(self.name) + " from " + str(self.menu_id)
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=120)
+    page_id = models.ForeignKey(Page, null=True, related_name='categories', on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return "Category " + str(self.pk) + ": " + str(self.name) + " from " + str(self.page_id)
+
+
 class Plate(models.Model):
     name = models.CharField(max_length=120)
     price = models.IntegerField(default=0)
-    menu_id = models.ForeignKey(Menu, null=True, related_name='plates', on_delete=models.SET_NULL)
+    photo = models.CharField(max_length=120)
+    description = models.CharField(max_length=250, default=" ")
+    category_id = models.ForeignKey(Category, null=True, related_name='plates', on_delete=models.SET_NULL)
 
     def __str__(self):
-        return "Plate " + str(self.pk) + ": " + str(self.name) + " from " + str(self.menu_id)
+        return "Plate " + str(self.pk) + ": " + str(self.name) + " from " + str(self.category_id)
 
 
 class User(models.Model):
@@ -53,7 +71,8 @@ class Reservation(models.Model):
     host_id = models.ForeignKey(User, null=True, related_name='reservations', on_delete=models.SET_NULL)
 
     def __str__(self):
-        return "Reservation " + str(self.pk) + ": " + str(self.host_id) + " in " + \
+
+        return "Reservation " + str(self.pk) + " from " + str(self.host_id) + " in " + \
                str(self.restaurant_id) + " at " + str(self.time)
 
 
@@ -62,7 +81,7 @@ class Order(models.Model):
     user_id = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return "Order " + str(self.pk) + ": from " + str(self.user_id) + " in " + str(self.reservation_id)
+        return "Order " + str(self.pk) + " in " + str(self.reservation_id)
 
 
 class OrderItem(models.Model):
