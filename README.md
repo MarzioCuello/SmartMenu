@@ -27,3 +27,21 @@ Django + Angular WebApp
 
 * user: admin
 * pass: admin
+
+
+# Frontend:
+
+## Instalar Node.js
+* https://nodejs.org/en/download/
+
+## Instalar Angular
+* npm install -g @angular/cli
+
+## Instalar paquetes del proyecto
+* cd SmartMenu/front
+* npm install
+
+## Levantar el server 
+* ng serve
+
+**(deberia quedar en localhost:4200)**
